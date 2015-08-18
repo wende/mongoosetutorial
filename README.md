@@ -21,4 +21,4 @@ Type in the commandline the universal bootstrapping command for Phoenix projects
 
 We'll use `mongoosetutorial` name for the sake of this tutorial.
 
-![Image](../blob/master/tutorial/resources/last-session.gif?raw=true)
+![Image](../master/tutorial/resources/last-session.gif?raw=true)
