@@ -26,6 +26,15 @@ We'll use `mongoosetutorial` name for the sake of this tutorial.
 Now let's open our newly created project in our favorite IDE or text editor. I use emacs with alchemist-mode but any other text-editor will do just fine.
 
 For the sake of making sure everythin works fine let's start the server in the commandline and do a safety check.
+
+    mix phoenix.server
+    
+And check if everything is alright by going to localhost:3000
+
+We should see something like that: 
+![Image](../master/tutorial/resources/step3.jpg?raw=true)
+
+And the server should output something similiar to that:
 ![Image](../master/tutorial/resources/step2.gif?raw=true)
 
 
