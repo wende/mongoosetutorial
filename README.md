@@ -21,4 +21,11 @@ Type in the commandline the universal bootstrapping command for Phoenix projects
 
 We'll use `mongoosetutorial` name for the sake of this tutorial.
 
-![Image](../master/tutorial/resources/last-session.gif?raw=true)
+![Image](../master/tutorial/resources/step1.gif?raw=true)
+
+Now let's open our newly created project in our favorite IDE or text editor. I use emacs with alchemist-mode but any other text-editor will do just fine.
+
+For the sake of making sure everythin works fine let's start the server in the commandline and do a safety check.
+![Image](../master/tutorial/resources/step2.gif?raw=true)
+
+
