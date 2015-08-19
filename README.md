@@ -37,4 +37,52 @@ We should see something like that:
 And the server should output something similiar to that:
 ![Image](../master/tutorial/resources/step2.gif?raw=true)
 
+Now we need to include some XMPP client to be able to talk to MongooseIM.
+We're gonna use [scrogson/hedwig](https://github.com/scrogson/hedwig) for that.
+Let's add 
+
+    {:hedwig, "~> 0.1.0"},
+    {:exml, github: "paulgray/exml"}
+    
+to our deps in mix.exs
+
+![Image](../master/tutorial/resources/step4.gif?raw=true)
+
+Now let's download all new deps with 
+
+    mix deps.get
+    
+![Image](../master/tutorial/resources/step5.gif?raw=true)
+
+Because we're decent programmers we always write unit tests before we do something stupid.
+So let's write out first empty test and let's wonder what we want to do in TDD style
+
+![Image](../master/tutorial/resources/step6.gif?raw=true)
+
+Now let's create our first Hedwig handler. Handler is a module specifying what we would like to do with each message.
+
+Let's paste the echo handler
+
+    defmodule Hedwig.Handlers.Echo do
+      @moduledoc """
+      A completely useless echo script.
+      This script simply echoes the same message back.
+      """
+      
+      @usage nil
+      
+      use Hedwig.Handler
+      
+      def handle_event(%Message{} = msg, opts) do
+        reply(msg, msg.body)
+        {:ok, opts}
+      end
+      
+      def handle_event(_, opts), do: {:ok, opts}
+    end
+
+![Image](../master/tutorial/resources/step7.gif?raw=true)
+
+
+
 
