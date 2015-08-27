@@ -11,7 +11,7 @@ To check if the instalation completed properly open the command-line and insert 
 ### Installing Phoenix
 If You haven't got Phoenix installed yet, head to the Phoenix's installation guide [here](http://www.phoenixframework.org/docs/installation).
 
-### Creating the project
+### Preparing the project
 
 Now let's create the project. If You already have an existing project You can skip this section.
 
@@ -54,12 +54,9 @@ Now let's download all new deps with
     
 ![Image](../master/tutorial/resources/step5.gif?raw=true)
 
-Because we're decent programmers we always write unit tests before we do something stupid.
-So let's write out first empty test and let's wonder what we want to do in TDD style
+### XMPP Client
 
-![Image](../master/tutorial/resources/step6.gif?raw=true)
-
-Now let's create our first Hedwig handler. Handler is a module specifying what we would like to do with each message.
+Now let's create our first Hedwig handler. Handler is a module specifying what we would like to do with each incoming XMPP Stanza.
 
 Let's paste the echo handler
 
@@ -84,6 +81,17 @@ end
 ```
 
 ![Image](../master/tutorial/resources/step7.gif?raw=true)
+
+
+Now we need to make the browser connect to our server via WebSockets
+We're going to use an abstraction called [Channels in Phoenix](http://www.phoenixframework.org/docs/channels)
+
+Let's open `web/channels/user_socket` (If You don't have this file You need to update Your Phoenix to the newest version and start all over again from [Preparing the project](#Preparing-the-project))
+
+
+
+
+And now let's change `reply(msg, msg.body)` to Broadcasting on
 
 
 
