@@ -172,3 +172,5 @@ You need to modify the credentials according to Your account. If You're running 
 If You've done that now let's open some XMPP client (I use Gajim) connect so some account and write a message to client under JID `test@localhost`
 
 ![Image](../master/tutorial/resources/step14.png?raw=true)
+
+Congratz! We just received our first XMPP Message with our primitive client.
