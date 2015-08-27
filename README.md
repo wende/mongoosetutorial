@@ -86,7 +86,7 @@ end
 Now we need to make the browser connect to our server via WebSockets
 We're going to use an abstraction called [Channels in Phoenix](http://www.phoenixframework.org/docs/channels)
 
-Let's open `web/channels/user_socket` (If You don't have this file You need to update Your Phoenix to the newest version and start all over again from [Preparing the project](#Preparing-the-project))
+Let's open `web/channels/user_socket` (If You don't have this file You need to update Your Phoenix to the newest version and start all over again from [Preparing the project](#preparing-the-project))
 
 
 
