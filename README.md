@@ -1,7 +1,7 @@
 # mongoosetutorial
 
 # Hands on XMPP(MongooseIM) connection from Phoenix/Elixir using Hedwig
-Making use of XMPP technology to provide realtime feed to our website.
+Tutorial on making use of XMPP technology from a Phoenix server to provide realtime feed in a form of news ticker on our website. 
 
 ## Preparation
 ### Installing MongooseIM
@@ -107,7 +107,7 @@ end
 
 
 Now we need to make the browser connect to our server via WebSockets
-We're going to use an abstraction called [Channels in Phoenix](http://www.phoenixframework.org/docs/channels)
+We're going to use an abstraction called [Channels](http://www.phoenixframework.org/docs/channels)
 
 Let's open `web/channels/user_socket` (If You don't have this file You need to update Your Phoenix to the newest version and start all over again from [Preparing the project](#preparing-the-project))
 And uncomment the line ( #5 in my version) 
@@ -167,17 +167,6 @@ And now let's go back to our EchoHandler and change `reply(msg, msg.body)` to Br
 ![Image](../master/tutorial/resources/step12.gif?raw=true)
 
 
-However this solution requires structure which can be easily cast to JSON, because of that we need to pass msg body as a map.
-So let's sligthly correct our JS code written before.
-![Image](../master/tutorial/resources/step13.gif?raw=true)
-
-
-Because of that we also need to make a minor fix to  our socket.js code
-
-![Image](../master/tutorial/resources/step13.gif?raw=true)
-
-
-
 You need to modify the credentials according to Your account. If You're running MongooseIM locally You can leave the credentials as they are, but remember to create such account on your machine with 
 `$ mongooseimctl register test localhost test` command at Your local machine.
 
@@ -186,3 +175,18 @@ If You've done that now let's open some XMPP client (I use Gajim) connect so som
 ![Image](../master/tutorial/resources/step14.png?raw=true)
 
 Congratz! We just received our first XMPP Message with our primitive client.
+
+The only problem right now is that whenever we refresh our website, all of our data gets wiped out.
+So our last step will be adding a persistancy.
+
+So let's use Agents to hold our state
+![Image](../master/tutorial/resources/step16.png?raw=true)
+
+Now let's save last 3 messages 
+![Image](../master/tutorial/resources/step17.png?raw=true)
+
+And send them when the client connects. Because we can't yet push to the socket we need to send it to our handler and handle that in handle_info
+![Image](../master/tutorial/resources/step18.png?raw=true)
+![Image](../master/tutorial/resources/step19.png?raw=true)
+
+
