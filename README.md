@@ -1,6 +1,7 @@
 # mongoosetutorial
 
-# Using XMPP (MongooseIM) Server with Elixir and Phoenix Framework
+# Hands on XMPP(MongooseIM) connection from Phoenix/Elixir using Hedwig
+Making use of XMPP technology to provide realtime feed to our website.
 
 ## Preparation
 ### Installing MongooseIM
@@ -57,6 +58,26 @@ Now let's download all new deps with
 ![Image](../master/tutorial/resources/step5.gif?raw=true)
 
 ### XMPP Client
+
+First we need to configure the XMPP client for it to run properly. Let's open `config/config.exs` and paste that at the end of the file
+```elixir
+config :hedwig, :clients,         
+   [%{
+       jid: "test@localhost",
+       password: "test",
+       nickname: "test",
+       rooms: [
+         "test@localhost"      
+       ],
+      config: %{
+        require_tls?: false,
+        use_compression?: false,
+            use_stream_management?: true,
+            transport: :tcp
+          },        
+      handlers: [{Hedwig.Handlers.Echo, %{}}]       
+}]
+```
 
 Now let's create our first Hedwig handler. Handler is a module specifying what we would like to do with each incoming XMPP Stanza.
 
@@ -122,13 +143,23 @@ Now we need to modify the client. Let's change the room in the `web/channels/soc
 
 ![Image](../master/tutorial/resources/step10.gif?raw=true)
 
-Now we're gonna add a handler of incoming messages.
+First let's init `alert-info` div to contain badass marquee tag (Because we can)
+Now we're gonna add a handler for incoming messages.
+Let's add a `on("message")` handler and when it executes we will append message content to our alert-info div.
+I've also added that the messages are capped at length of 3, so that we don't get overloaded with them with time/
 ```js
-channel.on("message", (msg)=> {               
-    document.getElementsByClassName("jumbotron")[0].innerText = msg;             
-}); 
+var news = [];
+document.querySelector(".alert-info").innerHTML = "<marquee> </marquee>";      
+var show = function(info){
+  news.push(info);
+  if(news.length > 3) news.shift();
+  document.querySelector(".alert-info marquee").innerHTML = news.join(" | ");             
+};
+channel.on("message", (msg)=> {
+  show(msg.msg);        
+});
 ```
-    ![Image](../master/tutorial/resources/step11.gif?raw=true)
+![Image](../master/tutorial/resources/step15.gif?raw=true)
 
 And now let's go back to our EchoHandler and change `reply(msg, msg.body)` to Broadcasting on our Socket Endpoint.
 
@@ -146,25 +177,6 @@ Because of that we also need to make a minor fix to  our socket.js code
 ![Image](../master/tutorial/resources/step13.gif?raw=true)
 
 
-Now we need to configure the XMPP client for it to run properly. Let's open `config/config.exs` and paste that at the end of the file
-```elixir
-config :hedwig, :clients,         
-   [%{
-       jid: "test@localhost",
-       password: "test",
-       nickname: "test",
-       rooms: [
-         "test@localhost"      
-       ],
-      config: %{
-        require_tls?: false,
-        use_compression?: false,
-            use_stream_management?: true,
-            transport: :tcp
-          },        
-      handlers: [{Hedwig.Handlers.Echo, %{}}]       
-}]
-```
 
 You need to modify the credentials according to Your account. If You're running MongooseIM locally You can leave the credentials as they are, but remember to create such account on your machine with 
 `$ mongooseimctl register test localhost test` command at Your local machine.
