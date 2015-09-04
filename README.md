@@ -193,3 +193,4 @@ Let's restart the server.
 Send 3 messages again, and try to refresh the page.
 
 
+![Image](../master/tutorial/resources/step20.png?raw=true)
