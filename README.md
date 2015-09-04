@@ -180,13 +180,16 @@ The only problem right now is that whenever we refresh our website, all of our d
 So our last step will be adding a persistancy.
 
 So let's use Agents to hold our state
-![Image](../master/tutorial/resources/step16.png?raw=true)
+![Image](../master/tutorial/resources/step16.gif?raw=true)
 
 Now let's save last 3 messages 
-![Image](../master/tutorial/resources/step17.png?raw=true)
+![Image](../master/tutorial/resources/step17.gif?raw=true)
 
 And send them when the client connects. Because we can't yet push to the socket we need to send it to our handler and handle that in handle_info
-![Image](../master/tutorial/resources/step18.png?raw=true)
-![Image](../master/tutorial/resources/step19.png?raw=true)
+![Image](../master/tutorial/resources/step18.gif?raw=true)
+![Image](../master/tutorial/resources/step19.gif?raw=true)
+
+Let's restart the server.
+Send 3 messages again, and try to refresh the page.
 
 
