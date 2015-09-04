@@ -189,4 +189,7 @@ And send them when the client connects. Because we can't yet push to the socket 
 ![Image](../master/tutorial/resources/step18.gif?raw=true)
 ![Image](../master/tutorial/resources/step19.gif?raw=true)
 
+Let's restart the server.
+Send 3 messages again, and try to refresh the page.
+
 
