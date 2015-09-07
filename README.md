@@ -61,6 +61,8 @@ Now let's download all new deps with
 
 First we need to configure the XMPP client for it to run properly. Let's open `config/config.exs` and paste that at the end of the file
 ```elixir
+# mongoosetutorial/config/config.exs
+
 config :hedwig, :clients,         
    [%{
        jid: "test@localhost",
@@ -84,6 +86,8 @@ Now let's create our first Hedwig handler. Handler is a module specifying what w
 Let's paste the echo handler
 
 ```elixir
+# mongoosetutorial/lib/handlers/echo_handler.ex
+
 defmodule Hedwig.Handlers.Echo do
   @moduledoc """
   A completely useless echo script.
@@ -124,6 +128,8 @@ No we can do a safety check. Start the server with `mix phoenix.server` and open
 Now we need to create a RoomChannel.
 Let's create a file `web/channels/room_channel.ex` and paste that inside
 ```elixir
+#mongoosetutorial/web/channels/room_channel.ex
+
 defmodule Mongoosetutorial.RoomChannel do
   use Phoenix.Channel
   
@@ -148,6 +154,8 @@ Now we're gonna add a handler for incoming messages.
 Let's add a `on("message")` handler and when it executes we will append message content to our alert-info div.
 I've also added that the messages are capped at length of 3, so that we don't get overloaded with them with time/
 ```js
+// mongoosetutorial/web/static/js/socket.js
+
 var news = [];
 document.querySelector(".alert-info").innerHTML = "<marquee> </marquee>";      
 var show = function(info){
@@ -180,12 +188,55 @@ The only problem right now is that whenever we refresh our website, all of our d
 So our last step will be adding a persistancy.
 
 So let's use Agents to hold our state
+
+```Elixir
+# mongoosetutorial/lib/handlers/echo_handler.ex
+
+def init(opts) do           
+  Agent.start_link fn -> [] end, name: :news_ticker
+  {:ok, opts}
+end
+```
+
 ![Image](../master/tutorial/resources/step16.gif?raw=true)
 
-Now let's save last 3 messages 
+Now let's save last 3 messages
+
+```Elixir
+# mongoosetutorial/lib/handlers/echo_handler.ex
+
+def handle_event(%Message{} = msg, opts) do
+  Agent.update :news_ticker, fn state ->
+    [msg | state] |> Enum.take(3)
+  end
+  Mongoosetutorial.Endpoint.broadcast! "rooms:lobby", "message", %{ :msg => msg.body}      
+  {:ok, opts}
+end
+```
 ![Image](../master/tutorial/resources/step17.gif?raw=true)
 
-And send them when the client connects. Because we can't yet push to the socket we need to send it to our handler and handle that in handle_info
+And send them when the client connects. 
+Because we can't yet push to the socket when it is initializing, we need to send it to our handler and handle that in handle_info.
+
+
+```Elixir
+# mongoosetutorial/web/channels/room_channel.ex
+
+def join("rooms:lobby", auth_msg, socket) do        
+    Kernel.send(self(), {:msgs, Agent.get(:news_ticker, &(&1))})
+    {:ok, socket}
+end
+```
+```Elixir
+# mongoosetutorial/web/channels/room_channel.ex
+
+def handle_info({:msgs, msgs}, socket) do    
+    Enum.reverse(msgs)
+    |> Enum.each(fn a -> push(socket, "message", %{"msg"=> a.body}) end)
+    {:noreply, socket}
+end
+```
+
 ![Image](../master/tutorial/resources/step18.gif?raw=true)
 ![Image](../master/tutorial/resources/step19.gif?raw=true)
 
