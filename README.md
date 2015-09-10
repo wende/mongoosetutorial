@@ -5,6 +5,12 @@ Tutorial on making use of XMPP technology from a Phoenix server to provide realt
 
 ## Preparation
 ### Installing MongooseIM
+To check if You have everything installed run
+
+    bash <(wget -qO- https://raw.githubusercontent.com/wende/mongoosetutorial/master/checkenv.sh)
+
+In Your CLI. If there is no errors You can safely skip this part and move to [Preparing the project](#preparing_the_project)
+
 First You need to head to [MongooseIM's repo download section](https://github.com/esl/MongooseIM#download-packages) and download distribution matching Your operating system. It's best to download latest stable version (by the time this tutorial is written it's 1.5.1 rev. 2)
 
 To check if the instalation completed properly open the command-line and insert `mongooseimctl start`. If terminal responded with `Node is already running!` then It's alright and we're good to go.
