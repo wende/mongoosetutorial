@@ -4,10 +4,12 @@
 Tutorial on making use of XMPP technology from a Phoenix server to provide realtime feed in a form of news ticker on our website. 
 
 ## Preparation
-### Installing MongooseIM
 To check if You have everything installed run
 
     bash <(wget -qO- https://raw.githubusercontent.com/wende/mongoosetutorial/master/checkenv.sh)
+
+### Installing MongooseIM
+
 
 In Your CLI. If there are no errors You can safely skip this part and move to [Preparing the project](#preparing-the-project)
 
