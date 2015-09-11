@@ -160,6 +160,14 @@ Now we need to modify the client. Let's change the room in the `web/channels/soc
 
 ![Image](../master/tutorial/resources/step10.gif?raw=true)
 
+Now let's verify that we did everything correct:
+Head to:
+http://localhost:4000/
+Open developers console and You should see something like that:
+![Image](../master/tutorial/resources/safety-check.png?raw=true)
+
+Now let's do something fancy with it
+
 First let's init `alert-info` div to contain badass marquee tag (Because we can)
 Now we're gonna add a handler for incoming messages.
 Let's add a `on("message")` handler and when it executes we will append message content to our alert-info div.
