@@ -28,7 +28,7 @@ Now let's create the project. If You already have an existing project You can sk
 
 Type in the commandline the universal bootstrapping command for Phoenix projects
 
-    mix phonix.new project_name
+    mix phoenix.new project_name
 
 We'll use `mongoosetutorial` name for the sake of this tutorial.
 
