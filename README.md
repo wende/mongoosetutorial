@@ -38,6 +38,7 @@ Now let's open our newly created project in our favorite IDE or text editor. I u
 
 For the sake of making sure everythin works fine let's start the server in the commandline and do a safety check.
 
+    cd mongoosetest/
     mix phoenix.server
     
 And check if everything is alright by going to localhost:3000
