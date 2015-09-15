@@ -4,7 +4,17 @@
 Tutorial on making use of XMPP technology from a Phoenix server to provide realtime feed in a form of news ticker on our website. 
 
 ## Preparation
+To check if You have everything installed run
+
+    bash <(wget -qO- https://raw.githubusercontent.com/wende/mongoosetutorial/master/checkenv.sh)
+    
+In Your CLI. If there are no errors You can safely skip this part and move to [Preparing the project](#preparing-the-project)
+
 ### Installing MongooseIM
+
+
+
+
 First You need to head to [MongooseIM's repo download section](https://github.com/esl/MongooseIM#download-packages) and download distribution matching Your operating system. It's best to download latest stable version (by the time this tutorial is written it's 1.5.1 rev. 2)
 
 To check if the instalation completed properly open the command-line and insert `mongooseimctl start`. If terminal responded with `Node is already running!` then It's alright and we're good to go.
@@ -18,7 +28,7 @@ Now let's create the project. If You already have an existing project You can sk
 
 Type in the commandline the universal bootstrapping command for Phoenix projects
 
-    mix phonix.new project_name
+    mix phoenix.new project_name
 
 We'll use `mongoosetutorial` name for the sake of this tutorial.
 
@@ -28,6 +38,7 @@ Now let's open our newly created project in our favorite IDE or text editor. I u
 
 For the sake of making sure everythin works fine let's start the server in the commandline and do a safety check.
 
+    cd mongoosetest/
     mix phoenix.server
     
 And check if everything is alright by going to localhost:3000
@@ -148,6 +159,14 @@ end
 Now we need to modify the client. Let's change the room in the `web/channels/socket.js` to `rooms:lobby`
 
 ![Image](../master/tutorial/resources/step10.gif?raw=true)
+
+Now let's verify that we did everything correct:
+Head to:
+http://localhost:4000/
+Open developers console and You should see something like that:
+![Image](../master/tutorial/resources/safety-check.png?raw=true)
+
+Now let's do something fancy with it
 
 First let's init `alert-info` div to contain badass marquee tag (Because we can)
 Now we're gonna add a handler for incoming messages.
