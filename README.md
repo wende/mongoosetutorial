@@ -264,3 +264,29 @@ Send 3 messages again, and try to refresh the page.
 
 
 ![Image](../master/tutorial/resources/step20.png?raw=true)
+
+
+## Bonus - Release
+To make a standalone release we need to open mix.exs and add
+    
+```elixir    
+{:exrm, "~> 0.15.3"}
+```
+
+and `server: true` to prod.exs configuration so it looks like
+
+```elixir
+config :mongoosetutorial, Mongoosetutorial.Endpoint,   
+  http: [port: 4001],                                                                             
+  url: [host: "example.com", port: 80],
+  cache_static_manifest: "priv/static/manifest.json",
+  server: true
+```
+
+To our dependecies.
+Then we call commands in this order
+
+    $ mix deps.get
+    $ mix compile
+    $ MIX_ENV=prod mix digest
+    $ MIX_ENV=prod mix release
