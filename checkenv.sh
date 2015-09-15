@@ -25,4 +25,5 @@ command -v npm >/dev/null 2>&1 || { echo -e >&2 "[Warging] Npm recommended but n
 echo -e "${Gre}Npm installed ✓"
 
 
-echo -e "\s Alright! Everything looks fine!";
+echo -e "\n Alright! Everything looks fine!";
+echo -e '\e[0m'
