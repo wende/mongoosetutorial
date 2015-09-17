@@ -17,7 +17,7 @@ In Your CLI. If there are no errors You can safely skip this part and move to [P
 
 First You need to head to [MongooseIM's repo download section](https://github.com/esl/MongooseIM#download-packages) and download distribution matching Your operating system. It's best to download latest stable version (by the time this tutorial is written it's 1.5.1 rev. 2)
 
-To check if the instalation completed properly open the command-line and insert `mongooseimctl start`. If terminal responded with `Node is already running!` then It's alright and we're good to go.
+To check if the instalation completed properly open the command-line and insert `mongooseimctl status`. If the terminal responded with `The node mongooseim@localhost is started with status: started` then It's alright and we're good to go.
 
 ### Installing Phoenix
 If You haven't got Phoenix installed yet, head to the Phoenix's installation guide [here](http://www.phoenixframework.org/docs/installation).
