@@ -17,11 +17,11 @@ else
     echo -e "${Red}ERROR: ** Phoenix not installed!"
     exit
 fi
-command -v mongooseimctl >/dev/null 2>&1 || { echo -e >&2 "Mongooseim required but not installed. Aborting."; exit;};
+command -v mongooseimctl >/dev/null 2>&1 || { echo -e >&2 "${Red}Mongooseim required but not installed. Aborting."; exit;};
 echo -e "${Gre}Mongooseim installed ✓"
-command -v node >/dev/null 2>&1 || { echo -e >&2 "[Warging] Node.js recommended but not installed. Aborting."; exit;};
+command -v node >/dev/null 2>&1 || { echo -e >&2 "${Red}[Warning] Node.js recommended but not installed. Aborting."; exit;};
 echo -e "${Gre}Node.js installed ✓"
-command -v npm >/dev/null 2>&1 || { echo -e >&2 "[Warging] Npm recommended but not installed";};
+command -v npm >/dev/null 2>&1 || { echo -e >&2 "${Red}[Warning] Npm recommended but not installed";};
 echo -e "${Gre}Npm installed ✓"
 
 
