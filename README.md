@@ -41,7 +41,7 @@ For the sake of making sure everythin works fine let's start the server in the c
     cd mongoosetest/
     mix phoenix.server
     
-And check if everything is alright by going to localhost:3000
+And check if everything is alright by going to localhost:4000
 
 We should see something like that: 
 ![Image](../master/tutorial/resources/step3.png?raw=true)
