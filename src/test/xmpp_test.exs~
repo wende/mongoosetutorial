@@ -1,7 +1,0 @@
-defmodule Mongoosetutorial.XMPPTest do
-	use ExUnit.Case
-
-	test "Our first test" do
-
-	end
-end
