@@ -1,0 +1,267 @@
+
+=====
+===== LOGGING STARTED Tue Sep 15 13:58:58 CEST 2015
+=====
+Exec: /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/erts-6.0/bin/erlexec -boot /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/releases/0.0.1/mongoosetutorial -boot_var ERTS_LIB_DIR /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/erts-6.0/../lib -env ERL_LIBS /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/lib -config /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/releases/0.0.1/sys.config -pa /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/lib/consolidated -args_file /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/releases/0.0.1/vm.args -user Elixir.IEx.CLI -extra --no-halt +iex -- console
+Root: /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial
+/home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial
+Erlang/OTP 17 [erts-6.0] [source] [64-bit] [smp:4:4] [async-threads:10] [kernel-poll:false]
+
+13:59:01.302 [info] Waiting for socket
+13:59:01.579 [info] Outgoing stanza: {:xmlstreamstart, "stream:stream", [{"to", "localhost"}, {"version", "1.0"}, {"xml:lang", "en"}, {"xmlns", "jabber:client"}, {"xmlns:stream", "http://etherx.jabber.org/streams"}]}
+13:59:01.750 [error] Could not find static manifest at "/home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/lib/mongoosetutorial-0.0.1/priv/static/manifest.json". Run "mix phoenix.digest" after building your static files or remove the configuration from "config/prod.exs." 
+13:59:01.794 [info] Outgoing stanza: {:xmlel, "starttls", [{"xmlns", "urn:ietf:params:xml:ns:xmpp-tls"}], []}
+[warning] the :size option when configuring Mongoosetutorial.Repo is deprecated, please use :pool_size instead
+13:59:02.899 [info] Outgoing stanza: {:xmlstreamstart, "stream:stream", [{"to", "localhost"}, {"version", "1.0"}, {"xml:lang", "en"}, {"xmlns", "jabber:client"}, {"xmlns:stream", "http://etherx.jabber.org/streams"}]}
+13:59:02.961 [info] Outgoing stanza: {:xmlel, "auth", [{"xmlns", "urn:ietf:params:xml:ns:xmpp-sasl"}, {"mechanism", "PLAIN"}], [xmlcdata: "AHRlc3QAdGVzdA=="]}
+13:59:03.055 [info] Waiting for socket
+13:59:03.055 [info] Outgoing stanza: {:xmlstreamstart, "stream:stream", [{"to", "localhost"}, {"version", "1.0"}, {"xml:lang", "en"}, {"xmlns", "jabber:client"}, {"xmlns:stream", "http://etherx.jabber.org/streams"}]}
+13:59:03.056 [info] Outgoing stanza: {:xmlel, "starttls", [{"xmlns", "urn:ietf:params:xml:ns:xmpp-tls"}], []}
+13:59:03.128 [info] Outgoing stanza: {:xmlstreamstart, "stream:stream", [{"to", "localhost"}, {"version", "1.0"}, {"xml:lang", "en"}, {"xmlns", "jabber:client"}, {"xmlns:stream", "http://etherx.jabber.org/streams"}]}
+13:59:03.129 [info] Outgoing stanza: {:xmlel, "auth", [{"xmlns", "urn:ietf:params:xml:ns:xmpp-sasl"}, {"mechanism", "PLAIN"}], [xmlcdata: "AHRlc3QAdGVzdA=="]}
+13:59:03.195 [info] Waiting for socket
+13:59:03.195 [info] Outgoing stanza: {:xmlstreamstart, "stream:stream", [{"to", "localhost"}, {"version", "1.0"}, {"xml:lang", "en"}, {"xmlns", "jabber:client"}, {"xmlns:stream", "http://etherx.jabber.org/streams"}]}
+13:59:03.196 [info] Outgoing stanza: {:xmlel, "starttls", [{"xmlns", "urn:ietf:params:xml:ns:xmpp-tls"}], []}
+13:59:03.219 [error] Error in process <0.97.0> on node 'mongoosetutorial@127.0.0.1' with exit value: {#{'__exception__'=>true,'__struct__'=>'Elixir.Hedwig.Auth.Error',message=><<47 bytes>>},[{'Elixir.Hedwig.Auth',do_authenticate,2,[{file,"lib/hedwig/auth.ex"},{line,29}]},{'Elixir.Hedwig.Conn',authenticate,1,[{file,"lib/hedwig/conn.ex"},{line... 
+
+
+Interactive Elixir (1.0.5) - press Ctrl+C to exit (type h() ENTER for help)
+13:59:03.272 [info] Outgoing stanza: {:xmlstreamstart, "stream:stream", [{"to", "localhost"}, {"version", "1.0"}, {"xml:lang", "en"}, {"xmlns", "jabber:client"}, {"xmlns:stream", "http://etherx.jabber.org/streams"}]}
+13:59:03.274 [info] Outgoing stanza: {:xmlel, "auth", [{"xmlns", "urn:ietf:params:xml:ns:xmpp-sasl"}, {"mechanism", "PLAIN"}], [xmlcdata: "AHRlc3QAdGVzdA=="]}
+
+=SUPERVISOR REPORT==== 15-Sep-2015::13:59:03 ===
+     Supervisor: {local,'Elixir.Hedwig.Supervisor'}
+     Context:    child_terminated
+     Reason:     {#{'__exception__' => true,
+                    '__struct__' => 'Elixir.Hedwig.Auth.Error',
+                    message => <<"Failed to authenticate using mechanism: \"PLAIN\"">>},
+                  [{'Elixir.Hedwig.Auth',do_authenticate,2,
+                       [{file,"lib/hedwig/auth.ex"},{line,29}]},
+                   {'Elixir.Hedwig.Conn',authenticate,1,
+                       [{file,"lib/hedwig/conn.ex"},{line,96}]},
+                   {'Elixir.Hedwig.Conn',start,1,
+                       [{file,"lib/hedwig/conn.ex"},{line,55}]}]}
+     Offender:   [{pid,<0.95.0>},
+                  {name,'Elixir.Hedwig.Client'},
+                  {mfargs,
+                      {'Elixir.Hedwig.Client',start_link,
+                          [#{config => #{'require_tls?' => false,
+                               transport => tcp,
+                               'use_compression?' => false,
+                               'use_stream_management?' => true},
+                             handlers => [{'Elixir.Hedwig.Handlers.Echo',#{}}],
+                             jid => <<"test@localhost">>,
+                             nickname => <<"test">>,
+                             password => <<"test">>,
+                             rooms => [<<"test@localhost">>]}]}},
+                  {restart_type,permanent},
+                  {shutdown,5000},
+                  {child_type,worker}]
+
+
+=SUPERVISOR REPORT==== 15-Sep-2015::13:59:03 ===
+     Supervisor: {local,'Elixir.Hedwig.Supervisor'}
+     Context:    child_terminated
+     Reason:     {#{'__exception__' => true,
+                    '__struct__' => 'Elixir.Hedwig.Auth.Error',
+                    message => <<"Failed to authenticate using mechanism: \"PLAIN\"">>},
+                  [{'Elixir.Hedwig.Auth',do_authenticate,2,
+                       [{file,"lib/hedwig/auth.ex"},{line,29}]},
+                   {'Elixir.Hedwig.Conn',authenticate,1,
+                       [{file,"lib/hedwig/conn.ex"},{line,96}]},
+                   {'Elixir.Hedwig.Conn',start,1,
+                       [{file,"lib/hedwig/conn.ex"},{line,55}]}]}
+     Offender:   [{pid,<0.162.0>},
+                  {name,'Elixir.Hedwig.Client'},
+                  {mfargs,
+                      {'Elixir.Hedwig.Client',start_link,
+                          [#{config => #{'require_tls?' => false,
+                               transport => tcp,
+                               'use_compression?' => false,
+                               'use_stream_management?' => true},
+                             handlers => [{'Elixir.Hedwig.Handlers.Echo',#{}}],
+                             jid => <<"test@localhost">>,
+                             nickname => <<"test">>,
+                             password => <<"test">>,
+                             rooms => [<<"test@localhost">>]}]}},
+                  {restart_type,permanent},
+                  {shutdown,5000},
+                  {child_type,worker}]
+
+13:59:03.312 [error] Error in process <0.164.0> on node 'mongoosetutorial@127.0.0.1' with exit value: {#{'__exception__'=>true,'__struct__'=>'Elixir.Hedwig.Auth.Error',message=><<47 bytes>>},[{'Elixir.Hedwig.Auth',do_authenticate,2,[{file,"lib/hedwig/auth.ex"},{line,29}]},{'Elixir.Hedwig.Conn',authenticate,1,[{file,"lib/hedwig/conn.ex"},{line... 
+
+
+13:59:03.339 [error] Error in process <0.170.0> on node 'mongoosetutorial@127.0.0.1' with exit value: {#{'__exception__'=>true,'__struct__'=>'Elixir.Hedwig.Auth.Error',message=><<47 bytes>>},[{'Elixir.Hedwig.Auth',do_authenticate,2,[{file,"lib/hedwig/auth.ex"},{line,29}]},{'Elixir.Hedwig.Conn',authenticate,1,[{file,"lib/hedwig/conn.ex"},{line... 
+
+
+
+=SUPERVISOR REPORT==== 15-Sep-2015::13:59:03 ===
+     Supervisor: {local,'Elixir.Hedwig.Supervisor'}
+     Context:    child_terminated
+     Reason:     {#{'__exception__' => true,
+                    '__struct__' => 'Elixir.Hedwig.Auth.Error',
+                    message => <<"Failed to authenticate using mechanism: \"PLAIN\"">>},
+                  [{'Elixir.Hedwig.Auth',do_authenticate,2,
+                       [{file,"lib/hedwig/auth.ex"},{line,29}]},
+                   {'Elixir.Hedwig.Conn',authenticate,1,
+                       [{file,"lib/hedwig/conn.ex"},{line,96}]},
+                   {'Elixir.Hedwig.Conn',start,1,
+                       [{file,"lib/hedwig/conn.ex"},{line,55}]}]}
+     Offender:   [{pid,<0.168.0>},
+                  {name,'Elixir.Hedwig.Client'},
+                  {mfargs,
+                      {'Elixir.Hedwig.Client',start_link,
+                          [#{config => #{'require_tls?' => false,
+                               transport => tcp,
+                               'use_compression?' => false,
+                               'use_stream_management?' => true},
+                             handlers => [{'Elixir.Hedwig.Handlers.Echo',#{}}],
+                             jid => <<"test@localhost">>,
+                             nickname => <<"test">>,
+                             password => <<"test">>,
+                             rooms => [<<"test@localhost">>]}]}},
+                  {restart_type,permanent},
+                  {shutdown,5000},
+                  {child_type,worker}]
+
+13:59:03.341 [info] Waiting for socket
+13:59:03.342 [info] Outgoing stanza: {:xmlstreamstart, "stream:stream", [{"to", "localhost"}, {"version", "1.0"}, {"xml:lang", "en"}, {"xmlns", "jabber:client"}, {"xmlns:stream", "http://etherx.jabber.org/streams"}]}
+13:59:03.343 [info] Outgoing stanza: {:xmlel, "starttls", [{"xmlns", "urn:ietf:params:xml:ns:xmpp-tls"}], []}
+13:59:03.423 [info] Outgoing stanza: {:xmlstreamstart, "stream:stream", [{"to", "localhost"}, {"version", "1.0"}, {"xml:lang", "en"}, {"xmlns", "jabber:client"}, {"xmlns:stream", "http://etherx.jabber.org/streams"}]}
+13:59:03.424 [info] Outgoing stanza: {:xmlel, "auth", [{"xmlns", "urn:ietf:params:xml:ns:xmpp-sasl"}, {"mechanism", "PLAIN"}], [xmlcdata: "AHRlc3QAdGVzdA=="]}
+13:59:03.491 [error] Error in process <0.177.0> on node 'mongoosetutorial@127.0.0.1' with exit value: {#{'__exception__'=>true,'__struct__'=>'Elixir.Hedwig.Auth.Error',message=><<47 bytes>>},[{'Elixir.Hedwig.Auth',do_authenticate,2,[{file,"lib/hedwig/auth.ex"},{line,29}]},{'Elixir.Hedwig.Conn',authenticate,1,[{file,"lib/hedwig/conn.ex"},{line... 
+
+
+
+=SUPERVISOR REPORT==== 15-Sep-2015::13:59:03 ===
+     Supervisor: {local,'Elixir.Hedwig.Supervisor'}
+     Context:    child_terminated
+     Reason:     {#{'__exception__' => true,
+                    '__struct__' => 'Elixir.Hedwig.Auth.Error',
+                    message => <<"Failed to authenticate using mechanism: \"PLAIN\"">>},
+                  [{'Elixir.Hedwig.Auth',do_authenticate,2,
+                       [{file,"lib/hedwig/auth.ex"},{line,29}]},
+                   {'Elixir.Hedwig.Conn',authenticate,1,
+                       [{file,"lib/hedwig/conn.ex"},{line,96}]},
+                   {'Elixir.Hedwig.Conn',start,1,
+                       [{file,"lib/hedwig/conn.ex"},{line,55}]}]}
+     Offender:   [{pid,<0.175.0>},
+                  {name,'Elixir.Hedwig.Client'},
+                  {mfargs,
+                      {'Elixir.Hedwig.Client',start_link,
+                          [#{config => #{'require_tls?' => false,
+                               transport => tcp,
+                               'use_compression?' => false,
+                               'use_stream_management?' => true},
+                             handlers => [{'Elixir.Hedwig.Handlers.Echo',#{}}],
+                             jid => <<"test@localhost">>,
+                             nickname => <<"test">>,
+                             password => <<"test">>,
+                             rooms => [<<"test@localhost">>]}]}},
+                  {restart_type,permanent},
+                  {shutdown,5000},
+                  {child_type,worker}]
+
+
+=SUPERVISOR REPORT==== 15-Sep-2015::13:59:03 ===
+     Supervisor: {local,'Elixir.Hedwig.Supervisor'}
+     Context:    shutdown
+     Reason:     reached_max_restart_intensity
+     Offender:   [{pid,<0.175.0>},
+                  {name,'Elixir.Hedwig.Client'},
+                  {mfargs,
+                      {'Elixir.Hedwig.Client',start_link,
+                          [#{config => #{'require_tls?' => false,
+                               transport => tcp,
+                               'use_compression?' => false,
+                               'use_stream_management?' => true},
+                             handlers => [{'Elixir.Hedwig.Handlers.Echo',#{}}],
+                             jid => <<"test@localhost">>,
+                             nickname => <<"test">>,
+                             password => <<"test">>,
+                             rooms => [<<"test@localhost">>]}]}},
+                  {restart_type,permanent},
+                  {shutdown,5000},
+                  {child_type,worker}]
+
+13:59:03.738 [info] Application hedwig exited: shutdown
+iex(mongoosetutorial@127.0.0.1)1> {"Kernel pid terminated",application_controller,"{application_terminated,hedwig,shutdown}"}
+
+Crash dump was written to: erl_crash.dump
+Kernel pid terminated (application_controller) ({application_terminated,hedwig,shutdown})
+
+=====
+===== LOGGING STARTED Tue Sep 15 14:09:53 CEST 2015
+=====
+Exec: /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/erts-6.0/bin/erlexec -boot /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/releases/0.0.1/mongoosetutorial -boot_var ERTS_LIB_DIR /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/erts-6.0/../lib -env ERL_LIBS /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/lib -config /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/releases/0.0.1/sys.config -pa /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/lib/consolidated -args_file /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/releases/0.0.1/vm.args -user Elixir.IEx.CLI -extra --no-halt +iex -- console
+Root: /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial
+/home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial
+Erlang/OTP 17 [erts-6.0] [source] [64-bit] [smp:4:4] [async-threads:10] [kernel-poll:false]
+
+14:09:53.491 [info] Waiting for socket
+14:09:53.533 [info] Outgoing stanza: {:xmlstreamstart, "stream:stream", [{"to", "localhost"}, {"version", "1.0"}, {"xml:lang", "en"}, {"xmlns", "jabber:client"}, {"xmlns:stream", "http://etherx.jabber.org/streams"}]}
+14:09:53.550 [info] Outgoing stanza: {:xmlel, "starttls", [{"xmlns", "urn:ietf:params:xml:ns:xmpp-tls"}], []}
+[warning] the :size option when configuring Mongoosetutorial.Repo is deprecated, please use :pool_size instead
+Interactive Elixir (1.0.5) - press Ctrl+C to exit (type h() ENTER for help)
+14:09:53.715 [info] Outgoing stanza: {:xmlstreamstart, "stream:stream", [{"to", "localhost"}, {"version", "1.0"}, {"xml:lang", "en"}, {"xmlns", "jabber:client"}, {"xmlns:stream", "http://etherx.jabber.org/streams"}]}
+14:09:53.721 [info] Outgoing stanza: {:xmlel, "auth", [{"xmlns", "urn:ietf:params:xml:ns:xmpp-sasl"}, {"mechanism", "PLAIN"}], [xmlcdata: "AHRlc3QAdGVzdA=="]}
+iex(mongoosetutorial@127.0.0.1)1> 14:09:53.783 [info] Outgoing stanza: {:xmlstreamstart, "stream:stream", [{"to", "localhost"}, {"version", "1.0"}, {"xml:lang", "en"}, {"xmlns", "jabber:client"}, {"xmlns:stream", "http://etherx.jabber.org/streams"}]}
+14:09:53.784 [info] Outgoing stanza: {:xmlel, "iq", [{"type", "set"}, {"id", "877f"}], {:xmlel, "bind", [{"xmlns", "urn:ietf:params:xml:ns:xmpp-bind"}], [{:xmlel, "resource", [], {:xmlcdata, ""}}]}}
+14:09:53.785 [info] Outgoing stanza: {:xmlel, "iq", [{"type", "set"}, {"id", "9e56"}], {:xmlel, "session", [{"xmlns", "urn:ietf:params:xml:ns:xmpp-session"}], []}}
+14:09:53.881 [info] Outgoing stanza: {:xmlel, "presence", [], []}
+14:09:53.882 [info] test@localhost successfully connected.
+14:09:53.882 [info] Outgoing stanza: {:xmlel, "presence", [{"to", "test@localhost/test"}], [{:xmlel, "x", [{"xmlns", "http://jabber.org/protocol/muc"}], [{:xmlel, "history", [{"maxstanzas", "0"}], []}]}]}
+14:09:53.903 [info] Incoming stanza: %Hedwig.Stanzas.Presence{client: #PID<0.95.0>, from: %Hedwig.JID{resource: "35978481571442318993880575", server: "localhost", user: "test"}, id: nil, matches: nil, payload: [], show: "", status: "", to: %Hedwig.JID{resource: "35978481571442318993880575", server: "localhost", user: "test"}, type: nil}
+iex(mongoosetutorial@127.0.0.1)1> 
+BREAK: (a)bort (c)ontinue (p)roc info (i)nfo (l)oaded
+       (v)ersion (k)ill (D)b-tables (d)istribution
+
+=====
+===== LOGGING STARTED Tue Sep 15 14:15:12 CEST 2015
+=====
+Exec: /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/erts-6.0/bin/erlexec -boot /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/releases/0.0.1/mongoosetutorial -boot_var ERTS_LIB_DIR /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/erts-6.0/../lib -env ERL_LIBS /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/lib -config /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/releases/0.0.1/sys.config -pa /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/lib/consolidated -args_file /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/releases/0.0.1/vm.args -user Elixir.IEx.CLI -extra --no-halt +iex -- console
+Root: /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial
+/home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial
+Erlang/OTP 17 [erts-6.0] [source] [64-bit] [smp:4:4] [async-threads:10] [kernel-poll:false]
+
+14:15:12.539 [info] Waiting for socket
+[warning] the :size option when configuring Mongoosetutorial.Repo is deprecated, please use :pool_size instead
+Interactive Elixir (1.0.5) - press Ctrl+C to exit (type h() ENTER for help)
+iex(mongoosetutorial@127.0.0.1)1> Erlang/OTP 17 [erts-6.0] [source] [64-bit] [smp:4:4] [async-threads:10] [kernel-poll:false]
+
+14:15:15.108 [info] Waiting for socket
+[warning] the :size option when configuring Mongoosetutorial.Repo is deprecated, please use :pool_size instead
+Interactive Elixir (1.0.5) - press Ctrl+C to exit (type h() ENTER for help)
+iex(mongoosetutorial@127.0.0.1)1>                                   iex(mongoosetutorial@127.0.0.1)1> 
+nil
+iex(mongoosetutorial@127.0.0.1)2> 
+BREAK: (a)bort (c)ontinue (p)roc info (i)nfo (l)oaded
+       (v)ersion (k)ill (D)b-tables (d)istribution
+
+=====
+===== LOGGING STARTED Tue Sep 15 14:58:59 CEST 2015
+=====
+Exec: /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/erts-6.0/bin/erlexec -boot /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/releases/0.0.1/mongoosetutorial -boot_var ERTS_LIB_DIR /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/erts-6.0/../lib -env ERL_LIBS /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/lib -config /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/releases/0.0.1/sys.config -pa /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/lib/consolidated -args_file /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial/releases/0.0.1/vm.args -user Elixir.IEx.CLI -extra --no-halt +iex -- console
+Root: /home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial
+/home/iraasta/GoogleDrive/projects/esl/mongooseproject-bg/mongoosetutorial/src/rel/mongoosetutorial
+Erlang/OTP 17 [erts-6.0] [source] [64-bit] [smp:4:4] [async-threads:10] [kernel-poll:false]
+
+14:58:59.785 [info] Waiting for socket
+14:58:59.822 [info] Outgoing stanza: {:xmlstreamstart, "stream:stream", [{"to", "localhost"}, {"version", "1.0"}, {"xml:lang", "en"}, {"xmlns", "jabber:client"}, {"xmlns:stream", "http://etherx.jabber.org/streams"}]}
+14:58:59.836 [info] Outgoing stanza: {:xmlel, "auth", [{"xmlns", "urn:ietf:params:xml:ns:xmpp-sasl"}, {"mechanism", "PLAIN"}], [xmlcdata: "AHRlc3QAdGVzdA=="]}
+14:58:59.837 [info] Outgoing stanza: {:xmlstreamstart, "stream:stream", [{"to", "localhost"}, {"version", "1.0"}, {"xml:lang", "en"}, {"xmlns", "jabber:client"}, {"xmlns:stream", "http://etherx.jabber.org/streams"}]}
+[warning] the :size option when configuring Mongoosetutorial.Repo is deprecated, please use :pool_size instead
+14:58:59.875 [info] Outgoing stanza: {:xmlel, "iq", [{"type", "set"}, {"id", "4656"}], {:xmlel, "bind", [{"xmlns", "urn:ietf:params:xml:ns:xmpp-bind"}], [{:xmlel, "resource", [], {:xmlcdata, ""}}]}}
+14:58:59.875 [info] Outgoing stanza: {:xmlel, "iq", [{"type", "set"}, {"id", "53bb"}], {:xmlel, "session", [{"xmlns", "urn:ietf:params:xml:ns:xmpp-session"}], []}}
+Interactive Elixir (1.0.5) - press Ctrl+C to exit (type h() ENTER for help)
+iex(mongoosetutorial@127.0.0.1)1> 14:59:00.002 [info] Outgoing stanza: {:xmlel, "presence", [], []}
+14:59:00.002 [info] test@localhost successfully connected.
+14:59:00.002 [info] Outgoing stanza: {:xmlel, "presence", [{"to", "test@localhost/test"}], [{:xmlel, "x", [{"xmlns", "http://jabber.org/protocol/muc"}], [{:xmlel, "history", [{"maxstanzas", "0"}], []}]}]}
+14:59:00.022 [info] Incoming stanza: %Hedwig.Stanzas.Presence{client: #PID<0.95.0>, from: %Hedwig.JID{resource: "365801694114423219401365", server: "localhost", user: "test"}, id: nil, matches: nil, payload: [], show: "", status: "", to: %Hedwig.JID{resource: "365801694114423219401365", server: "localhost", user: "test"}, type: nil}
+14:59:00.035 [info] Incoming stanza: %Hedwig.Stanzas.Presence{client: #PID<0.95.0>, from: %Hedwig.JID{resource: "Gajim", server: "localhost", user: "iraasta"}, id: "835", matches: nil, payload: [%{name: "x", payload: [], stamp: "20150915T12:57:13", xmlns: "jabber:x:delay"}, %{from: %Hedwig.JID{resource: "Gajim", server: "localhost", user: "iraasta"}, name: "delay", payload: [], stamp: "2015-09-15T12:57:13Z", xmlns: "urn:xmpp:delay"}, %{hash: "sha-1", name: "c", node: "http://gajim.org", payload: [], ver: "47EPEmSc9oqPGwcrbNtpKcYyJcE=", xmlns: "http://jabber.org/protocol/caps"}, %{name: "x", payload: [%{name: "photo", payload: []}], xmlns: "vcard-temp:x:update"}, %{name: "priority", payload: ["50"]}], show: "", status: "", to: %Hedwig.JID{resource: "365801694114423219401365", server: "localhost", user: "test"}, type: nil}
+14:59:00.039 [info] Incoming stanza: %Hedwig.Stanzas.IQ{client: #PID<0.95.0>, from: %Hedwig.JID{resource: "Gajim", server: "localhost", user: "iraasta"}, id: "839", matches: nil, payload: [%{name: "query", payload: [], xmlns: "http://jabber.org/protocol/disco#info"}], to: %Hedwig.JID{resource: "365801694114423219401365", server: "localhost", user: "test"}, type: "get"}
+iex(mongoosetutorial@127.0.0.1)1> 
+nil
+iex(mongoosetutorial@127.0.0.1)2> 
+BREAK: (a)bort (c)ontinue (p)roc info (i)nfo (l)oaded
+       (v)ersion (k)ill (D)b-tables (d)istribution

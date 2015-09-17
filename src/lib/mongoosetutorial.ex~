@@ -1,0 +1,50 @@
+defmodule Mongoosetutorial do
+  use Application
+
+  # See http://elixir-lang.org/docs/stable/elixir/Application.html
+  # for more information on OTP Applications
+  def start(_type, _args) do
+    import Supervisor.Spec, warn: false
+
+		start_hedwig()
+		
+    children = [
+      # Start the endpoint when the application starts
+      supervisor(Mongoosetutorial.Endpoint, []),
+      # Start the Ecto repository
+      worker(Mongoosetutorial.Repo, []),
+      # Here you could define other workers and supervisors as children
+      # worker(Mongoosetutorial.Worker, [arg1, arg2, arg3]),
+    ]
+
+    # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
+    # for other strategies and supported options
+    opts = [strategy: :one_for_one, name: Mongoosetutorial.Supervisor]
+    Supervisor.start_link(children, opts)
+  end
+
+  # Tell Phoenix to update the endpoint configuration
+  # whenever the application is updated.
+  def config_change(changed, _new, removed) do
+    Mongoosetutorial.Endpoint.config_change(changed, removed)
+    :ok
+  end
+	def start_hedwig() do
+		client = %{
+			jid: "test@localhost",
+			password: "test",
+			nickname: "test",
+			rooms: [
+				"test@localhost"
+			],
+			config: %{
+				require_tls?: false,
+				use_compression?: false,
+				use_stream_management?: true,
+				transport: :tcp
+			},
+			handlers: [{Hedwig.Handlers.Echo, %{}}]
+			   }
+		{:ok, hedwig_pid} = Hedwig.Client.start_link(client)
+	end
+end
