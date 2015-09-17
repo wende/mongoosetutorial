@@ -88,7 +88,7 @@ config :hedwig, :clients,
             use_stream_management?: true,
             transport: :tcp
           },        
-      handlers: [{Hedwig.Handlers.Echo, %{}}]       
+      handlers: [{Mongoosetutorial.Handlers.Echo, %{}}]       
 }]
 ```
 
@@ -99,11 +99,7 @@ Let's paste the echo handler
 ```elixir
 # mongoosetutorial/lib/handlers/echo_handler.ex
 
-defmodule Hedwig.Handlers.Echo do
-  @moduledoc """
-  A completely useless echo script.
-  This script simply echoes the same message back.
-  """
+defmodule Mongoosetutorial.Handlers.Echo do
   
   @usage nil
   
