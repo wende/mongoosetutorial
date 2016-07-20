@@ -282,8 +282,9 @@ server: true
 To our dependecies.
 Then we call commands in this order
 
-$ mix deps.get
-$ mix compile
-$ MIX_ENV=prod mix digest
-$ MIX_ENV=prod mix release
-
+```
+  mix deps.get
+  mix compile
+  MIX_ENV=prod mix digest
+  MIX_ENV=prod mix release
+```
